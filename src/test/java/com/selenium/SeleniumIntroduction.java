@@ -3,9 +3,9 @@ package com.selenium;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
 
 public class SeleniumIntroduction {
     @Test
@@ -17,17 +17,15 @@ public class SeleniumIntroduction {
         WebDriver driver = new ChromeDriver();
             // Maximize the browser
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
             // Launch Website
         driver.get("https://www.facebook.com/");
-        Thread.sleep(100);
+//        Thread.sleep(100);
         driver.findElement(By.name("email")).sendKeys("test@yahoo.com");
-        Thread.sleep(100);
-        //driver.findElement(By.id("email")).sendKeys("Test@gmail.com");
-        //driver.findElement(By.id("email")).clear();
+//        Thread.sleep(100);
         driver.findElement(By.name("pass")).sendKeys("Test@123");
-//        System.out.println(""+ driver.getTitle() );
-//        System.out.println(""+ driver.getCurrentUrl());
-        Thread.sleep(100);
+        System.out.println("Tittle"+ driver.getTitle() );
+        System.out.println("URL"+ driver.getCurrentUrl());
 //        driver.close();
         }
     }
