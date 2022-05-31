@@ -17,7 +17,6 @@ public class SeleniumIntroduction {
         WebDriver driver = new ChromeDriver();
             // Maximize the browser
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
             // Launch Website
         driver.get("https://www.facebook.com/");
 //        Thread.sleep(100);
