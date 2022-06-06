@@ -153,10 +153,10 @@ public class JavaScriptPopUp {
     @Test
     public void fileUploadPopUpAutoit() throws InterruptedException, IOException {
         driver.get("http://nervgh.github.io/pages/angular-file-upload/examples/simple");
-        Thread.sleep(2000);
+        Thread.sleep(6000);
         driver.findElement(By.xpath("//body[@class='ng-scope']/div[@class='container']/div[@class='row']/div[2]")).click();
         Thread.sleep(2000);
-        Runtime.getRuntime().exec("C:\\Users\\Swapnil Misal\\Desktop\\Testing\\Sample\\FileUpload.exe");
+        Runtime.getRuntime().exec("C:\\Users\\Swapnil Misal\\Desktop\\Testing\\Sample\\File1.exe");
         Thread.sleep(4000);
     }
 
@@ -176,6 +176,18 @@ public class JavaScriptPopUp {
         driver.close();
     }
 
+    @Test
+    public void autoITFileUpload() throws InterruptedException, IOException {
+
+        driver.get("https://www.freepdfconvert.com/pdf-to-word");
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//span[contains(text(),'Choose PDF file')]")).click();
+        Thread.sleep(3000);
+
+        Runtime runtime = Runtime.getRuntime();
+        runtime.exec("C:\\Users\\Swapnil Misal\\Desktop\\Testing\\Sample\\File1.exe");
+
+    }
 
     @AfterMethod
     public void closeDriver() {
